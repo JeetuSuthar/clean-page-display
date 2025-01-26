@@ -106,6 +106,26 @@ const Index = () => {
                 name: "iPad Pro",
                 image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0",
                 description: "M2 chip, 12.9-inch Liquid Retina XDR display"
+              },
+              {
+                name: "Samsung Galaxy S24 Ultra",
+                image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf",
+                description: "Snapdragon 8 Gen 3, 200MP camera system"
+              },
+              {
+                name: "AirPods Pro",
+                image: "https://images.unsplash.com/photo-1600294037681-c80b4cb5b434",
+                description: "Active Noise Cancellation, Adaptive Audio"
+              },
+              {
+                name: "Gaming Laptop",
+                image: "https://images.unsplash.com/photo-1593640408182-31c70c8268f5",
+                description: "RTX 4090, 32GB RAM, 240Hz Display"
+              },
+              {
+                name: "Smart Watch",
+                image: "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9",
+                description: "Health tracking, Always-on display"
               }
             ].map((product, index) => (
               <div
@@ -176,18 +196,30 @@ const Index = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
-              "Expert Staff",
-              "Premium Products",
-              "Multiple Locations",
-              "After-Sales Support"
+              {
+                title: "Expert Staff",
+                description: "Our team of tech experts is here to help you make informed decisions"
+              },
+              {
+                title: "Premium Products",
+                description: "We carry only the highest quality electronics from trusted brands"
+              },
+              {
+                title: "Multiple Locations",
+                description: "Visit any of our 5 convenient store locations"
+              },
+              {
+                title: "After-Sales Support",
+                description: "Dedicated support team for all your post-purchase needs"
+              }
             ].map((feature, index) => (
               <div
                 key={index}
                 className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
-                <h3 className="text-xl font-semibold mb-4">{feature}</h3>
+                <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
                 <p className="text-gray-600">
-                  We ensure the highest standards in everything we do
+                  {feature.description}
                 </p>
               </div>
             ))}
@@ -197,26 +229,40 @@ const Index = () => {
 
       {/* Store Hours Section */}
       <section className="py-20 bg-gradient-to-b from-white to-accent">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-primary mb-6">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-primary mb-12 text-center">
             Store Hours
           </h2>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            Visit us at our stores during business hours to experience our products firsthand.
-          </p>
-          <div className="max-w-md mx-auto bg-white rounded-lg shadow-lg p-6">
-            <div className="space-y-4">
-              <div className="flex justify-between">
-                <span className="font-medium">Monday - Friday</span>
-                <span>10:00 AM - 9:00 PM</span>
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-white rounded-2xl shadow-xl p-8 space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-semibold mb-4">Weekdays</h3>
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center">
+                      <span className="font-medium">Monday - Friday</span>
+                      <span className="text-secondary">10:00 AM - 9:00 PM</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-semibold mb-4">Weekends</h3>
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center">
+                      <span className="font-medium">Saturday</span>
+                      <span className="text-secondary">11:00 AM - 7:00 PM</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="font-medium">Sunday</span>
+                      <span className="text-secondary">12:00 PM - 6:00 PM</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="flex justify-between">
-                <span className="font-medium">Saturday</span>
-                <span>11:00 AM - 7:00 PM</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="font-medium">Sunday</span>
-                <span>12:00 PM - 6:00 PM</span>
+              <div className="pt-6 border-t">
+                <p className="text-gray-600 text-center">
+                  Extended hours during holiday seasons. Contact us for special holiday schedules.
+                </p>
               </div>
             </div>
           </div>
